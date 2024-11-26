@@ -1,0 +1,14 @@
+# Indicate whether reads are single- or paired-end (options: single, paired)
+seq_design="paired"
+
+# Give this a meaningful name (e.g. PSAP, NMD, ...)
+myname="NMD"
+
+# Give this folder a meaningful name (preferred: YEAR_MONTH_STUDY_NAME)
+srvdir="/srv/2024_10_NMD_VB"
+
+# Give this folder a meaningful name (preferred: YEAR_MONTH_STUDY_NAME)
+mydir="/home/shithij/projects/FRG1-NMD"
+
+# This experiment.txt file has two tab-delimited columns: sample name and condition. IMPORTANT: Condition 1 always has to be "control"
+experiment_file="/home/shithij/projects/FRG1-NMD/FASTQ/experiment.oex.txt"
