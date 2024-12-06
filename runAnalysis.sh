@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# We have used https://github.com/boehmv/SMG5-SMG7/tree/main as a reference to write the script
+# It is a complete pipeline for RNA-seq analysis, from which we have used the Salmon and ISAR analysis part
+# We have modified the script to suit our needs
+
 if [ $# -eq 0 ]
 then
   echo "Missing options!"
@@ -50,7 +54,7 @@ while getopts "ahMCDILiQf:" OPTION; do
 
     h)
     echo "Usage:"
-    echo "CRSA_XXX_V006.sh -f /path/to/design.txt [-OPTION] "
+    echo "runAnalysis.sh -f /path/to/design.txt [-OPTION] "
     echo ""
     echo "   -f path/to/design.txt	MANDATORY: give this path to the design file; please see example design file for guidance"
     echo "   -a     to execute the full analysis (all other options enabled)" 

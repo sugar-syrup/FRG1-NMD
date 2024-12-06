@@ -160,38 +160,6 @@ extractConsequenceSummary(
     asFractionTotal = FALSE      # enables analysis of fraction of significant features
 )
 
-
-# Volcano plot
-pdf("Volcano_plot.pdf")
-ggplot(data=SwitchList_filt_Analyzed$isoformFeatures, aes(x=dIF, y=-log10(isoform_switch_q_value))) +
-     geom_point(
-        aes( color=abs(dIF) > 0.1 & isoform_switch_q_value < 0.05 ), # default cutoff
-        size=0.5
-    ) +
-    geom_hline(yintercept = -log10(0.05), linetype='dashed') + # default cutoff
-    geom_vline(xintercept = c(-0.1, 0.1), linetype='dashed') + # default cutoff
-    facet_wrap( ~ condition_2) +
-    #facet_grid(condition_1 ~ condition_2) + # alternative to facet_wrap if you have overlapping conditions
-    scale_color_manual('Signficant\nIsoform Switch', values = c('gray','red')) +
-    labs(x='dIF', y='-Log10 ( Isoform Switch Q Value )') +
-    theme_bw()
-dev.off()
-
-pdf("Volcano_plot_PTC.pdf")
-ggplot(data=SwitchList_filt_Analyzed$isoformFeatures, aes(x=dIF, y=-log10(isoform_switch_q_value))) +
-     geom_point(
-        aes( color=PTC & isoform_switch_q_value < 0.05 & abs(dIF) > 0.1 ), # default cutoff
-        size=0.5
-    ) +
-    geom_hline(yintercept = -log10(0.05), linetype='dashed') + # default cutoff
-    geom_vline(xintercept = c(-0.1, 0.1), linetype='dashed') + # default cutoff
-    facet_wrap( ~ condition_2) +
-    #facet_grid(condition_1 ~ condition_2) + # alternative to facet_wrap if you have overlapping conditions
-    scale_color_manual('PTC', values = c('gray','red')) +
-    labs(x='dIF', y='-Log10 ( Isoform Switch Q Value )') +
-    theme_bw()
-dev.off()
-
 write.csv(SwitchList_filt_Analyzed$isoformFeatures, file="SwitchList_filt_Analyzed.csv")
 save.image(file='ISAR_session.RData')
 
