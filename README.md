@@ -24,7 +24,7 @@ To replicate the analysis, ensure the following software and packages are instal
 -   R (version >= 4.0)
 -   A system with sufficient computational resources for RNA-Seq data processing and visualization.
 
-Ensure all dependencies are correctly installed before running the analysis scripts in this repository. The script for the overall workflow is given in the file `runAnalysis.sh`. 
+Ensure all dependencies are correctly installed before running the analysis scripts in this repository. The script for the overall workflow is given in the file `runAnalysis.sh`. The script for UpSet plot is given seperatly for your reference.
 
 ## Authors
 
